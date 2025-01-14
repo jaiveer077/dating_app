@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asking You Out!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio autoplay>
+        <source src="audio.mp3">
+    </audio>
+    <div class="container">
+        <h1>Would you go out on a date with me?</h1>
+        <h2>Select the perfect day ❤️</h2>
+        <input type="date" id="date" />
+        <h2>Select the perfect time, please 😍</h2>
+        <input type="time" id="time" />
+        <button onclick="submitDateTime()">Submit</button>
+        <div class="output" id="output"></div>
+        <div id="imageContainer">
+            <img id="image" src="https://cyberkidleko.github.io/Go_out_with_me_please/img/please.jpg" alt="Please go out with me!" />
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(211, 114, 208);
+}
+.container {
+    text-align: center;
+}
+#image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
