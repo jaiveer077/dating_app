@@ -5,26 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asking You Out!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Rubik+Vinyl&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Rubik+Vinyl&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .step { display: none; }
+        .step.active { display: block; }
+        .credit-link { display: block; margin-top: 10px; }
+    </style>
 </head>
 <body>
-    <audio autoplay>
+    <audio autoplay id="bgmusic">
         <source src="audio.mp3">
     </audio>
     <div class="container">
-        <h1>Would you go out on a date with me?</h1>
-        <h2>Select the perfect day ❤️</h2>
-        <input type="date" id="date" />
-        <h2>Select the perfect time, please 😍</h2>
-        <input type="time" id="time" />
-        <button onclick="submitDateTime()">Submit</button>
-        <div class="output" id="output"></div>
-        <div id="imageContainer">
-            <img id="image" src="https://cyberkidleko.github.io/Go_out_with_me_please/img/please.jpg" alt="Please go out with me!" />
-        <a href="https://github.com/jaiveer077" target="_blank" class="credit-link">Idea and Code by @Jaiveer</a>
-        <button class="myButton" onclick="showPickUpLines()">Click here to see some love! ❤️</button>
+        <!-- Step 1 -->
+        <div class="step active" id="step1">
+            <h2>I have to tell you a secret!</h2>
+            <button onclick="showNextStep(2)">Click here to know that Secret 👌</button>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step" id="step2">
+            <h1>Would you go out on a date with me?</h1>
+            <button onclick="showNextStep(3)">Yes, of course! ❤️</button>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" id="step3">
+            <h2>Select the perfect day ❤️</h2>
+            <input type="date" id="date">
+            <button onclick="showNextStep(4)">Next</button>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step" id="step4">
+            <h2>Select the perfect time, please 😍</h2>
+            <input type="time" id="time">
+            <button onclick="submitDateTime(); showNextStep(5);">Submit</button>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step" id="step5">
+            <div class="output" id="output"></div>
+            <div id="imageContainer">
+                <img id="image" src="https://cyberkidleko.github.io/Go_out_with_me_please/img/please.jpg" alt="Please go out with me!" style="max-width: 300px;">
+            </div>
+            <button onclick="showPickUpLines()">Click here to see some love! ❤️</button>
+            <a href="https://github.com/jaiveer077" target="_blank" class="credit-link">Idea and Code by @Jaiveer</a>
+            <button onclick="showNextStep(1)">Start Over</button>
         </div>
     </div>
     <script src="script.js"></script>

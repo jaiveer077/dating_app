@@ -6,20 +6,20 @@ function submitDateTime() {
     // Displaying the selected date and time 
     const outputDiv = document.getElementById('output');
     const imageElement = document.getElementById('image');
+    const audio = new Audio('audio.mp3');
+    audio.play();
 
     if (dateInput && timeInput) {
         outputDiv.innerHTML = `Hurray! You're off to an awesome date with Jaiveer on <strong>${dateInput}</strong> at <strong>${timeInput}</strong>!! Be aware: He's a COOL GUY 😘`;
-
-        // Changing the image 
         imageElement.src = "https://content.imageresizer.com/images/memes/Celebration-meme-6.jpg";
     } else {
-        outputDiv.innerHTML = `<span style="color: black;">Atleast select a valid date and time 😒!</span>`;
+        outputDiv.innerHTML = `<span style="color: black;">At least select a valid date and time 😒!</span>`;
     }
 }
 
-let i = 0;
 function showPickUpLines() {
-    const pickupLines = ["🧲 Are you a magnet? Because I’m attracted to you. 💕",
+    const pickupLines = [
+        "🧲 Are you a magnet? Because I’m attracted to you. 💕",
         "Are you French? Because Eiffel for you. 😘",
         "Are you a star? Because your smile lights up my universe. 🌌",
         "Are you a song? Because you’re stuck in my head. 🎵",
@@ -34,4 +34,9 @@ function showPickUpLines() {
     alert(randomLine);
 }
 
-document.getElementById('myButton').style.animation = 'heartBeat 1s ease-in-out';
+function showNextStep(stepNumber) {
+    // Hide all steps
+    document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+    // Show the current step
+    document.getElementById(`step${stepNumber}`).classList.add('active');
+}
