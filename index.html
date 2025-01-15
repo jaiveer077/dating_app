@@ -22,13 +22,14 @@
         <!-- Step 1 -->
         <div class="step active" id="step1">
             <h2>I have to tell you a secret!</h2>
-            <button onclick="showNextStep(2)">Click here to know that Secret 👌</button>
+            <button onclick="showNextStep(2)">Click here to know that Secret 🔏</button>
         </div>
 
         <!-- Step 2 -->
         <div class="step" id="step2">
             <h1>Would you go out on a date with me?</h1>
             <button onclick="showNextStep(3)">Yes, of course! ❤️</button>
+            <button id="no-button" onclick="handleNoClick()">NO 😂</button>
         </div>
 
         <!-- Step 3 -->
@@ -51,7 +52,7 @@
             <div id="imageContainer">
                 <img id="image" src="https://cyberkidleko.github.io/Go_out_with_me_please/img/please.jpg" alt="Please go out with me!" style="max-width: 300px;">
             </div>
-            <button onclick="showPickUpLines()">Click here to see some love! ❤️</button>
+            <button class="myButton" onclick="showPickUpLines()">Click here to see some love! ❤️</button>
             <a href="https://github.com/jaiveer077" target="_blank" class="credit-link">Idea and Code by @Jaiveer</a>
             <button onclick="showNextStep(1)">Start Over</button>
         </div>
